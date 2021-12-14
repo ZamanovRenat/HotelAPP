@@ -22,5 +22,19 @@ namespace HotelAPP.Controllers
         {
             return View(_context.Rooms.ToList());
         }
+        [HttpGet]
+        public IActionResult CheckIn(int? id)
+        {
+            if (id == null) return RedirectToAction("Index");
+            ViewBag.ClientId = id;
+            return View();
+        }
+
+        public string CheckIn(Checkin checkin)
+        {
+            _context.Checkins.Add(checkin);
+            _context.SaveChanges();
+            return $"Спасибо, {checkin.Client}, за бронирование номера";
+        }
     }
 }
