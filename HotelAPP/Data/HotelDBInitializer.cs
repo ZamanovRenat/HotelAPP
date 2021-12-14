@@ -13,7 +13,6 @@ namespace HotelAPP.Data
                 context.Rooms.AddRange(
                     new Room()
                     {
-                        Id = 1,
                         Capacity = 2,
                         Comfort = "Luxe",
                         ImageUrl = "Room1.jpg",
@@ -21,7 +20,6 @@ namespace HotelAPP.Data
                     },
                     new Room()
                     {
-                        Id = 2,
                         Capacity = 2,
                         Comfort = "HalfLuxe",
                         ImageUrl = "Room2.jpg",
@@ -29,7 +27,6 @@ namespace HotelAPP.Data
                     },
                     new Room()
                     {
-                        Id = 3,
                         Capacity = 2,
                         Comfort = "Ordinary",
                         ImageUrl = "Room3.jpg",

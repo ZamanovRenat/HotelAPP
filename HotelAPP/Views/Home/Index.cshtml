@@ -17,15 +17,17 @@
             <th>Вместимость</th>
             <th>Комфортность</th>
             <th>Стоимость за 1 ночь</th>
+            <th>Вид</th>
         </tr>
         @foreach (var room in Model)
         {
-            <tr>
-                <td>@room.Id</td>
-                <td>@room.Capacity</td>
-                <td>@room.Comfort</td>
-                <td>@room.Price</td>
-            </tr>
+        <tr>
+            <td>@room.Id</td>
+            <td>@room.Capacity</td>
+            <td>@room.Comfort</td>
+            <td>@room.Price</td>
+            <td>@room.ImageUrl</td>
+        </tr>
         }
     </table>
 </div>
