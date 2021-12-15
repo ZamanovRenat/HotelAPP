@@ -34,7 +34,7 @@ namespace HotelAPP.Controllers
         {
             _context.Checkins.Add(checkin);
             _context.SaveChanges();
-            return $"Спасибо, {checkin.Client}, за бронирование номера";
+            return $"Спасибо, {checkin.ClientId}, за бронирование номера";
         }
     }
 }

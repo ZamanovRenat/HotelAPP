@@ -6,6 +6,24 @@
     <h3>Форма бронирования номеров</h3>
     <p>Для бронирования номера заполните следующие поля: </p>
     <form method="post">
-
+        <input type="hidden" value="@ViewBag.RoomId" name="RoomId"/>
+        <table>
+            <tr>
+                <td>Имя: </td>
+                <td><input type="text" name="Client" /></td>
+            </tr>
+            <tr>
+                <td>Пожелания: </td>
+                <td><input type="text" name="Notes" /></td>
+            </tr>
+            <tr>
+                <td>Номер телефона: </td>
+                <td><input type="text" name="PhoneNumber" /></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Отправить" /></td>
+                <td></td>
+            </tr>
+        </table>
     </form>
 </div>
