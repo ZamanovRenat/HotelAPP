@@ -21,6 +21,8 @@ namespace HotelAPP.Models
         [Display(Name = "Номер телефона")]
         public string PhoneNumber { get; set; }
         public string PassportData { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
         public string Notes { get; set; }
     }
 }

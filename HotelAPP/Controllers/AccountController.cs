@@ -29,8 +29,8 @@ namespace HotelAPP.Controllers
         {
             if (ModelState.IsValid)
             {
-                RegisterUser user = await _context.RegisterUsers.FirstOrDefaultAsync(u => u.Email == model.Email && u.Password == model.Password);
-                if (user != null)
+                Client client = await _context.Clients.FirstOrDefaultAsync(u => u.Email == model.Email && u.Password == model.Password);
+                if (client != null)
                 {
                     await Authenticate(model.Email); // аутентификация
 
@@ -51,11 +51,11 @@ namespace HotelAPP.Controllers
         {
             if (ModelState.IsValid)
             {
-                RegisterUser user = await _context.RegisterUsers.FirstOrDefaultAsync(u => u.Email == model.Email);
-                if (user == null)
+                var client = await _context.Clients.FirstOrDefaultAsync(u => u.Email == model.Email);
+                if (client == null)
                 {
                     // добавляем пользователя в бд
-                    _context.RegisterUsers.Add(new RegisterUser { Email = model.Email, Password = model.Password });
+                    _context.Clients.Add(new Client() { Email = model.Email, Password = model.Password });
                     await _context.SaveChangesAsync();
 
                     await Authenticate(model.Email); // аутентификация

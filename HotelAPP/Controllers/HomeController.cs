@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using System.Diagnostics;
 using System.Linq;
 using HotelAPP.Context;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HotelAPP.Controllers
 {
@@ -17,7 +18,7 @@ namespace HotelAPP.Controllers
             _logger = logger;
             _context = context;
         }
-
+        [Authorize]
         public IActionResult Index()
         {
             return View(_context.Rooms.ToList());
