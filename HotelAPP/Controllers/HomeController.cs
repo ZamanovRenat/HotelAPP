@@ -18,10 +18,9 @@ namespace HotelAPP.Controllers
             _logger = logger;
             _context = context;
         }
-        [Authorize]
         public IActionResult Index()
         {
-            return View();
+            return View(_context.Rooms);
         }
     }
 }
