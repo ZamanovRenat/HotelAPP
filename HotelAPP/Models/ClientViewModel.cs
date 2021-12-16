@@ -2,7 +2,7 @@
 
 namespace HotelAPP.Models
 {
-    public class Client
+    public class ClientViewModel
     {
         public int Id { get; set; }
         [Display(Name = "Имя")]

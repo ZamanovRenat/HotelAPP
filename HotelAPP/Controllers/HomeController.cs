@@ -21,21 +21,7 @@ namespace HotelAPP.Controllers
         [Authorize]
         public IActionResult Index()
         {
-            return View(_context.Rooms.ToList());
-        }
-        [HttpGet]
-        public IActionResult CheckIn(int? id)
-        {
-            if (id == null) return RedirectToAction("Index");
-            ViewBag.ClientId = id;
             return View();
-        }
-
-        public string CheckIn(Checkin checkin)
-        {
-            _context.Checkins.Add(checkin);
-            _context.SaveChanges();
-            return $"Спасибо, {checkin.ClientId}, за бронирование номера";
         }
     }
 }

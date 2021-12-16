@@ -1,6 +1,6 @@
 ﻿namespace HotelAPP.Models
 {
-    public class Room
+    public class RoomViewModel
     {
         public int Id { get; set; }
         public int Capacity { get; set; }

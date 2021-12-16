@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace HotelAPP.Models
 {
-    public class Checkin
+    public class BookingViewModel
     {
         public int Id { get; set; }
         public int ClientId { get; set; }

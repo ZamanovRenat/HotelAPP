@@ -2,7 +2,7 @@
 
 namespace HotelAPP.Models
 {
-    public class RegisterUser
+    public class RegisterClientViewModel
     {
         public int Id { get; set; }
         [Required(ErrorMessage = "Не указан Email")]

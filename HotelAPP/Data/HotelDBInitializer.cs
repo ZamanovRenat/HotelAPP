@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using HotelAPP.Context;
+using HotelAPP.Domain.Entities;
 using HotelAPP.Models;
 
 namespace HotelAPP.Data
