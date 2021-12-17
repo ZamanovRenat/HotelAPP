@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using System.Diagnostics;
 using System.Linq;
 using HotelAPP.Context;
+using HotelAPP.Services.InSQL;
 using HotelAPP.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 
