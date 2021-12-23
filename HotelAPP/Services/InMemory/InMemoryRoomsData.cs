@@ -21,7 +21,7 @@ namespace HotelAPP.Services.InMemory
 
         public IEnumerable<Room> getAllRooms() => TestData.Rooms;
 
-        public Room getRoom(int id) => TestData.Rooms.SingleOrDefault(room => room.Id == id);
+        public Room getRoom(int id) => TestData.Rooms.FirstOrDefault(room => room.Id == id);
 
         public int Add(Room room)
         {

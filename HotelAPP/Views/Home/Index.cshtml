@@ -27,7 +27,29 @@
             <td>@room.Comfort</td>
             <td>@room.Price</td>
             <td>@room.ImageUrl</td>
-            @*<td><a asp-action="CheckIn" asp-route-id="@room.Id">Забронировать</a></td>*@
+            <td>
+                @*<a asp-action="Details" asp-route-id="@employee.Id" asp-route="default"> *@
+                <a asp-action="Details" asp-route-id="@room.Id">
+                    <button type="submit">
+                        <i class="fa fa-trash-o text-danger">Инфо</i>
+                    </button>
+                </a>
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@room.Id">
+                    <button type="submit">
+                        <i class="fa fa-trash-o text-danger">Редактировать</i>
+                    </button>
+                </a>
+            </td>
+            <td>
+                <form asp-action="DeleteConfirmed" asp-route-id="@room.Id">
+                    <button type="submit">
+                        <i class="fa fa-trash-o text-danger">Удалить</i>
+                    </button>
+                </form>
+            </td>
+            <td><a asp-action="Edit" asp-route-id="@room.Id">Добавить</a></td>
         </tr>
         }
     </table>
