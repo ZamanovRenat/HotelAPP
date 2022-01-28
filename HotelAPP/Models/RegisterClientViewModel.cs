@@ -9,6 +9,9 @@ namespace HotelAPP.Models
         [Display(Name = "Электронная почта")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
+        [Required]
+        [Display(Name = "Имя пользователя")]
+        public string UserName { get; set; }
         [Required(ErrorMessage = "Не указан пароль")]
         [Display(Name = "Пароль")]
         [DataType(DataType.Password)]
