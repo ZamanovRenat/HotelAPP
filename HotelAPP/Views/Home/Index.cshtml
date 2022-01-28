@@ -21,36 +21,37 @@
         </tr>
         @foreach (var room in Model)
         {
-        <tr>
-            <td>@room.Id</td>
-            <td>@room.Capacity</td>
-            <td>@room.Comfort</td>
-            <td>@room.Price</td>
-            <td>@room.ImageUrl</td>
-            <td>
-                @*<a asp-action="Details" asp-route-id="@employee.Id" asp-route="default"> *@
-                <a asp-action="Details" asp-route-id="@room.Id">
-                    <button type="submit">
-                        <i class="fa fa-trash-o text-danger">Инфо</i>
-                    </button>
-                </a>
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@room.Id">
-                    <button type="submit">
-                        <i class="fa fa-trash-o text-danger">Редактировать</i>
-                    </button>
-                </a>
-            </td>
-            <td>
-                <form asp-action="DeleteConfirmed" asp-route-id="@room.Id">
-                    <button type="submit">
-                        <i class="fa fa-trash-o text-danger">Удалить</i>
-                    </button>
-                </form>
-            </td>
-            <td><a asp-action="Edit" asp-route-id="@room.Id">Добавить</a></td>
-        </tr>
+    <tr>
+        <td>@room.Id</td>
+        <td>@room.Capacity</td>
+        <td>@room.Comfort</td>
+        <td>@room.Price</td>
+        <td>@room.ImageUrl</td>
+        <td>
+            @*<a asp-action="Details" asp-route-id="@employee.Id" asp-route="default"> *@
+            <a asp-action="Details" asp-route-id="@room.Id">
+                <button type="submit">
+                    <i class="fa fa-trash-o text-danger">Инфо</i>
+                </button>
+            </a>
+        </td>
+        <td>
+            <a asp-action="Edit" asp-route-id="@room.Id">
+                <button type="submit">
+                    <i class="fa fa-trash-o text-danger">Редактировать</i>
+                </button>
+            </a>
+        </td>
+        <td>
+            <form asp-action="DeleteConfirmed" asp-route-id="@room.Id">
+                <button type="submit">
+                    <i class="fa fa-trash-o text-danger">Удалить</i>
+                </button>
+            </form>
+        </td>
+        <td><a asp-action="Edit" asp-route-id="@room.Id">Добавить</a></td>
+        <td><a asp-controller="Booking" asp-action="Index">Забронировать</a></td>
+    </tr>
         }
     </table>
 </div>
