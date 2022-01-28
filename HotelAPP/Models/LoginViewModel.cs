@@ -5,6 +5,9 @@ namespace HotelAPP.Models
 {
     public class LoginViewModel
     {
+        [Required]
+        [Display(Name = "Имя пользователя")]
+        public string UserName { get; set; }
         [Required(ErrorMessage = "Не указан Email")]
         [Display(Name = "Ваш E-mail")]
         [DataType(DataType.EmailAddress)]

@@ -81,10 +81,33 @@ namespace HotelAPP.Controllers
             return View(new LoginViewModel { ReturnUrl = ReturnUrl });
         }
         [HttpPost]
-        public IActionResult Login(LoginViewModel model)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login(LoginViewModel model)
         {
+            //Если вход успешный возвращем вид
             if (!ModelState.IsValid) return View(model);
 
+            //При успешной проверке пароля вход через SignInManager по паролю
+            var login_result = await _signInManager.PasswordSignInAsync(
+                model.UserName,
+                model.Password,
+                model.RememberMe,
+                //При отладке не учитываются не верные попытки ввода кода
+#if DEBUG
+                false
+#else
+                true
+#endif
+            );
+
+            //При успешном входе пользователя, происходит его перенаправление
+            if (login_result.Succeeded)
+            {
+                return LocalRedirect(model.ReturnUrl ?? "/");
+            }
+
+            //При неуспешном будет выводиться сообщение
+            ModelState.AddModelError("", "Ошибка в имени пользователя, либо в пароле");
             return View(model);
         }
 
