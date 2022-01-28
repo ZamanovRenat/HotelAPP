@@ -23,6 +23,20 @@
                         </li>
 
                     </ul>
+                    <ul class="navbar">
+                        <li>
+                            <a>@User.Identity?.Name</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Account" asp-action="Register">Регистрация</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Account" asp-action="Login">Вход</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Account" asp-action="Logout">Выход</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
