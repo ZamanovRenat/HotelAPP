@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelAPP.Migrations
 {
     [DbContext(typeof(HotelContext))]
-    [Migration("20220128134644_Identity")]
+    [Migration("20220128142942_Identity")]
     partial class Identity
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
